@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family:'Pixeboy';
+    src:url("../../public/fonts/Pixeboy.ttf");
+}
+
+body {
+    background: #000000;
+    overflow-x: hidden;
+    font-family: Pixeboy;
+}
+
+*::-webkit-scrollbar {
+    height: 10px;
+    width: 1px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    margin: auto;
+    width: 100vw;
+}
+
+.line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    overflow: hidden;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.line::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 15vh;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+    animation: drop 7s 0s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+/* Distribuindo as linhas */
+.line:nth-child(1) { left: 14.3%; }
+.line:nth-child(2) { left: 28.6%; }
+.line:nth-child(3) { left: 42.9%; }
+.line:nth-child(4) { left: 57.2%; }
+.line:nth-child(5) { left: 71.5%; }
+.line:nth-child(6) { left: 85.8%; }
+
+/* Ajustando os delays de animação */
+.line:nth-child(1)::after { animation-delay: 2s; }
+.line:nth-child(2)::after { animation-delay: 2.2s; }
+.line:nth-child(3)::after { animation-delay: 2.4s; }
+.line:nth-child(4)::after { animation-delay: 2.6s; }
+.line:nth-child(5)::after { animation-delay: 2.8s; }
+.line:nth-child(6)::after { animation-delay: 3.0s; }
+
+@keyframes drop {
+    0% {
+        top: -50%;
+    }
+
+    100% {
+        top: 110%;
+    }
+}
+
+html.light .line {
+    background: rgba(0, 0, 0, 0.15);
+    opacity: 1;
+}
+
+html.light .line::after {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, #000000 75%, #000000 100%);
+}

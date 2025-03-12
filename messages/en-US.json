@@ -1,0 +1,18 @@
+{
+    "metadata": {
+        "description": "LowPing Hosting is a hosting service that provides the best performance for your game moments.",
+        "home_page": {
+            "title": "Home | LowPing"
+        },
+        "termsofservice": {
+            "title": "Terms of Service | LowPing"
+        },
+        "privacypolicy": {
+            "title": "Privacy Policy | LowPing"
+        }
+    },
+    "home_content": {
+        "title": "Welcome to the Home Page",
+        "content": "This is the home page content"
+    }
+}
